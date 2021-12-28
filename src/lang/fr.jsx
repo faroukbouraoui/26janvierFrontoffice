@@ -2,6 +2,7 @@ const messagesFr = {
     'Présentation' : 'Présentation',
     'Programme' : 'Programme',
     'Médias' : 'Médias',
+    'Media' : 'Média',
     'Contribuer' : 'Contribuer',
     'Archive' : 'Archive',
     'Articles' : 'Articles',

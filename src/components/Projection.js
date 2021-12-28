@@ -187,7 +187,7 @@ const previousGallery = () => {
       infinite: false,
       centerPadding: 0,
       slidesToShow: 3,
-      rows: projection && projection.length<6?2:3,
+      rows: projection && projection.length<=6?2:3,
       slidesPerRow: 1,
       responsive: [
         {

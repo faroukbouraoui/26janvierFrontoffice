@@ -1,6 +1,6 @@
 const initialState = {
   token: null,
-  lang:"fr",
+  lang:"ar",
 };
 
 function AuthReducer(state = initialState, action) {

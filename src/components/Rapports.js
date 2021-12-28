@@ -122,7 +122,6 @@ const Rapports = (props)=>{
         return image.src = base64;   
     }
     const showModal =async(el)=>{
-        console.log("el",el);
         const requestOptions = {
             method: 'GET',
           };
