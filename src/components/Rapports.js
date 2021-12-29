@@ -197,7 +197,7 @@ const Rapports = (props)=>{
                 
             >
             <div className="modal-container">
-            <Slider {...settingsImage} ref={slider => (sliderRefModal.current = slider)} className="centerImageSlider">
+            <Slider {...settingsImage} ref={slider => (sliderRefModal.current = slider)}>
                 {rapportImage && rapportImage.map((el)=>(
                 <div>
                 <center>
@@ -210,16 +210,10 @@ const Rapports = (props)=>{
             {props.auth.lang == 'fr'?<h2 className={props.auth.lang+"_modal-title"}>{uniqueRapport && uniqueRapport.titre}</h2>:
                 <h2 className={props.auth.lang+"_modal-title"}>{uniqueRapport && uniqueRapport.titrear}</h2>}
              </div>
-                
                 {props.auth.lang == 'fr'?<p className={props.auth.lang+"_modal-content"}>{uniqueRapport && uniqueRapport.description}</p>:
                 <p className={props.auth.lang+"_modal-content"}>{uniqueRapport && uniqueRapport.descriptionar}</p>}
             </div>
             </Modal>
-            {/* Rapports Image-Text */}
-            {/* <section className="slider-page-section">
-                <h1 className="page-title">Rapports/ <br /> Publications</h1>
-                <div className="page-slider-shadow"></div>
-            </section> */}
             <section className={props.auth.lang+"_slider-rapport-section"}>
                 <h1 className={props.auth.lang+"_ressources-title"}> {getLanguage(props).Rapports}<br />{getLanguage(props).Publications} </h1>
                 <div className="ressources-slider-shadow"></div>
