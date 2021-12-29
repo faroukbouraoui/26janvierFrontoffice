@@ -28,7 +28,6 @@ const Photos = (props)=>{
         getAllPhotoDesc(pageInit, filter)
         if(photo !== newPhoto){
             setNewPhoto(photo)
-            
         }
     }, []);
 
@@ -54,7 +53,6 @@ const Photos = (props)=>{
         setPageInit(pageInit-1)
         // sliderRef.current.slickPrev();
         getAllPhotoDesc(pageInit-1, filter)
-        
     };
 
     const settings = {
@@ -62,7 +60,6 @@ const Photos = (props)=>{
       centerMode: false,
       infinite: false,
       centerPadding: 0,
-      slidesToShow: 1,
       speed: 500,
       slidesToShow: 4,
       rows: photo && photo.length<12?1:3,
@@ -71,8 +68,6 @@ const Photos = (props)=>{
         <div>
           <ul style={{ margin: "0px", padding: "0px" }}> 
           <li>
-          {/* <button>"20"</button> */}
-           {/* onClick={prevClick}  onClick={nextClick}*/}
             <div className="dots-arrow dots-prev" onClick={previous} >
                 <img className="dots-arrow-size" src={leftarrow} style={{margin:0}}/>
             </div>
@@ -102,28 +97,8 @@ const Photos = (props)=>{
         }
       ],
       dots: false,
-    //   appendDots: dots => (
-    //     <div>
-    //         <ul> 
-    //             <img className="page-arrow-size" src={leftarrow} onClick={pagePrevArrow()}/>
-    //             {dots} 
-    //             <img className="page-arrow-size" src={rightarrow} onClick={pageNextArrow()}/>
-    //         </ul>
-    //     </div>
-    //   ),
-    //   nextArrow: <pageNextArrow />,
-    //   prevArrow: <pagePrevArrow />
     };
-    // const getAllPhoto =async()=>{
-    //     const requestOptions = {
-    //         method: 'GET',
-    //       };
-    //     const data = await fetch(apiURL+"/photoarchive/getall",requestOptions);
-    //     const dataJson = await data.json();
-    //     if(data.status == 200){
-    //         setPhoto(dataJson);
-    //     }
-    // }
+
     const getAllPhotoAsc =async()=>{
         const requestOptions = {
             method: 'GET',
@@ -134,16 +109,7 @@ const Photos = (props)=>{
             setPhoto(dataJson);
         }
     }
-    // const getAllPhotoDesc =async()=>{
-    //     const requestOptions = {
-    //         method: 'GET',
-    //       };
-    //     const data = await fetch(apiURL+"/photoarchive/getallDESC",requestOptions);
-    //     const dataJson = await data.json();
-    //     if(data.status == 200){
-    //         setPhoto(dataJson);
-    //     }
-    // }
+  
     const getAllPhotoDesc =async(page, filter)=>{
         let formdata =new FormData()
         formdata.append('page',page)
@@ -178,7 +144,7 @@ const Photos = (props)=>{
           }
         
     }
-console.log('image',Images);
+console.log('asc', photo);
  
     
     return(
@@ -253,7 +219,7 @@ console.log('image',Images);
                             {getCurrentLocalDate(props,el.date)}
                             {/* </Moment> */}
                             </span>
-                            <h3 className={props.auth.lang+"_page-activity-card-title"}>{el.name.length <= 15? el.name: el.name.substring(0,15)+"..."}</h3>                            
+                            <h3 className={props.auth.lang+"_page-activity-card-title"}>{props.auth.lang == 'fr'?el.name.length <= 15? el.name: el.name.substring(0,15)+"...":el.namear.length <= 15? el.namear: el.namear.substring(0,15)+"..."}</h3>                            
                         </div>
                         </div>
                     </div>
