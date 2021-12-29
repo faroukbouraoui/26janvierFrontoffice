@@ -118,7 +118,6 @@ const Rapports = (props)=>{
     }
     const getImage =(base64)=>{
         var image = new Image();
-        // console.log("douta",image.src=base64);
         return image.src = base64;   
     }
     const showModal =async(el)=>{
@@ -159,8 +158,6 @@ const Rapports = (props)=>{
             <div>
               <ul style={{ margin: "0px", padding: "0px" }}> 
               <li>
-              {/* <button>"20"</button> */}
-               {/* onClick={prevClick}  onClick={nextClick}*/}
                 <div className="dots-arrow dots-prev" onClick={previousModal} >
                     <img className="dots-arrow-size" src={leftarrow} style={{margin:0}}/>
                 </div>
@@ -183,12 +180,7 @@ const Rapports = (props)=>{
             }
         ],
         dots: true,
-        // nextArrow: <NextImageArrow />,
-        // prevArrow: <PrevImageArrow />
         };
-        useEffect(() => {
-            console.log(rapport);
-          }, []);
     return(
 
         <>
