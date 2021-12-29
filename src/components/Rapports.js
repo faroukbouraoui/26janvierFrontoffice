@@ -201,7 +201,7 @@ const Rapports = (props)=>{
                 {rapportImage && rapportImage.map((el)=>(
                 <div>
                 <center>
-                    <Image src={el.data} className="img-preview" height={'100%'} />
+                    <Image src={el.data} className="img-preview"/>
                 </center>
                 </div>
                 ))}
